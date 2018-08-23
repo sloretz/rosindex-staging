@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROS Index</title>
+    <description>a community-maintained index of robotics software
+</description>
+    <link>http://rosindex.github.io/</link>
+    <atom:link href="http://rosindex.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 23 Aug 2018 19:17:21 +0000</pubDate>
+    <lastBuildDate>Thu, 23 Aug 2018 19:17:21 +0000</lastBuildDate>
+    <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>Cloud Services and Bountysource Campagin</title>
+        <description>&lt;p&gt;You might know that ROS Index is a static site, and for the last year, it has been generated on one or more privately-owned workstations. Supporting this manner of site generation is neither scalable nor robust. To improve the process, we have switched to using &lt;a href=&quot;https://cloud.google.com/compute/&quot;&gt;Google Compute Engine&lt;/a&gt; for generating the site. This makes it significantly easier to maintain and manage the site for a reasonable cost.&lt;/p&gt;
+
+&lt;p&gt;ROS Index has also migrated from an in-browser JavaScript-based search (lunr.js) to a Google Custom Search Engine (CSE). ROS Index is still being crawled, but this search should make it easier to find packages and repositories. In the future we will add semantic labels to package pages to make the Google CSE even more powerful.&lt;/p&gt;
+
+&lt;p&gt;To support these services, as well as general ROS Index development, we have created a Bountysource Campagain to improve the website. Support for ROS Index will directly improve the value of the site by increasing the crawl frequency and providing funds for maintenance and new features. If you value ROS Index and want to see it improved, even $1 USD per month can help!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://salt.bountysource.com/teams/rosindex&quot; target=&quot;_blank&quot; class=&quot;btn btn-success&quot;&gt;Support ROS Index on Bountysource!&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 04 Jul 2016 00:00:00 +0000</pubDate>
+        <link>http://rosindex.github.io/2016/07/04/google-cloud.html</link>
+        <guid isPermaLink="true">http://rosindex.github.io/2016/07/04/google-cloud.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>ROS(dep) Index</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://docs.ros.org/independent/api/rosdep/html/&quot;&gt;rosdep&lt;/a&gt; is a powerful
+bootstrapping tool and is the foundation of the ROS and Catkin package
+dependency system. One of the big challenges preventing ROS from being used on
+more operating systems is satisfying the broad spectrum of open source
+software programs and libraries, and rosdep is the Rosetta Stone of these system
+dependencies.&lt;/p&gt;
+
+&lt;p&gt;For example, if a package has a dependency on the key &lt;code&gt;libogre-dev&lt;/code&gt; then the
+&lt;a href=&quot;http://rosindex.github.io/d/libogre-dev/&quot;&gt;libogre-dev rosdep page&lt;/a&gt; will show
+not only on which versions of which operating systems &lt;code&gt;libogre-dev&lt;/code&gt; can be
+found, but also which versions of &lt;code&gt;libogre-dev&lt;/code&gt; would be installed in each
+case.&lt;/p&gt;
+
+&lt;p&gt;ROS Index now lists all known rosdep keys and their supported platforms in the
+&lt;a href=&quot;http://rosindex.github.io/deps/&quot;&gt;System Dependencies&lt;/a&gt; index, and soon packages
+which depend on a given rosdep key will link directly to their respective pages.&lt;/p&gt;
+
+&lt;p&gt;To contribute missing &lt;em&gt;rosdep rules&lt;/em&gt; see the &lt;a href=&quot;http://docs.ros.org/independent/api/rosdep/html/contributing_rules.html&quot;&gt;official rosdep
+documentation&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://rosindex.github.io/2015/02/10/rosdeps.html</link>
+        <guid isPermaLink="true">http://rosindex.github.io/2015/02/10/rosdeps.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Better Support for Older Repos</title>
+        <description>&lt;p&gt;There were previously a few thousand older ROS packages which weren&amp;#39;t being
+indexed because they were referenced by old (read: bad) svn repo checkout URIs.
+This has now been fixed, and now there are many more older repositories from
+ROS Fuerte and ROS Electric in the index.&lt;/p&gt;
+
+&lt;p&gt;A new &lt;a href=&quot;/stats/errors/&quot;&gt;Errors Page&lt;/a&gt; also now shows errors encountered while
+indexing. If you expect to see something in the index and it isn&amp;#39;t there, this
+page might shed some light on it.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
+        <link>http://rosindex.github.io/2015/01/30/older-repos.html</link>
+        <guid isPermaLink="true">http://rosindex.github.io/2015/01/30/older-repos.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Announcing ROS Index!</title>
+        <description>&lt;p&gt;In 2008, the ROS wiki was exactly the tool that the then-small ROS community
+needed. A central chalkboard on which all of the ROS developers could write
+documentation, create tutorials, and even perform design reviews on ROS packages
+(yes those used to happen).&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The ROS wiki has not aged well.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In 2015, however, the ROS wiki has not aged well, and software development
+practices have further evolved. It&amp;#39;s plagued by slow page-load times, a
+still-unsatisfying search, and a pervasive lack of synchronization between
+documentation and source code. These issues make using the wiki hard, and
+transitively, they make using ROS hard.&lt;/p&gt;
+
+&lt;p&gt;Back when ROS was first being developed, Subversion was the version control
+system of choice, and as such, it was more onerous to incorporate contributions
+from outside of the vetted group of ROS developers. Even when ROS moved to a
+collection of Git and Mercurial repositories on the now-defunct &lt;em&gt;ROS KForge&lt;/em&gt;,
+there was no support for Pull or Merge Requests to easily accept contributions
+from third-party developers.&lt;/p&gt;
+
+&lt;p&gt;The majority of ROS source code now resides in distributed version control
+systems like Git and Mercurial, and &amp;quot;social coding&amp;quot; sites like GitHub and
+Bitbucket have revolutionized open-source development patterns. These new
+patterns enable us to put documentation right alongside source code
+without making it too hard for users to contribute back. &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I don&amp;#39;t know if it&amp;#39;s right and I don&amp;#39;t want to change it if it might screw up
+other people.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;- Anonymous Graduate Student&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Furthermore, by re-coupling documentation to the source packages, students can
+feel secure in contributing pull requests which will necessarily get reviewed
+before they can be merged into a repository&amp;#39;s official documentation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Enter ROS Index.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ROS Index aims to be the &lt;em&gt;definitive index&lt;/em&gt; of all ROS software. It aims to do this
+not only by indexing all known ROS packages listed in
+&lt;a href=&quot;http://github.com/ros/rosdistro&quot;&gt;rosdistro&lt;/a&gt;, but also by including relevant forks
+of known ROS packages, and by encouraging people to &lt;a href=&quot;/contribute/add_repo/&quot;&gt;add their
+packages&lt;/a&gt; to the index &lt;em&gt;no matter how volatile or buggy
+they are&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;ROS Index also aims to better summarize the pulse of the ROS development
+community with &lt;a href=&quot;/stats/&quot;&gt;statistics&lt;/a&gt; and the ability to list the &lt;a href=&quot;/packages/page/1/time/&quot;&gt;most recently
+updated ROS repositories&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;ROS Index emphasizes the documentation included in each repository&amp;#39;s and ROS
+package&amp;#39;s README, and will encourage developers to augment their package
+manifests with additional &lt;a href=&quot;/contribute/metadata/&quot;&gt;metadata&lt;/a&gt; including tutorials
+and ROS node, library, and plugin APIs.&lt;/p&gt;
+
+&lt;p&gt;So explore, click around, and of course feel free to
+&lt;a href=&quot;/contribute/&quot;&gt;contribute&lt;/a&gt;. If you run into a bug or something confusing at any
+point, feel free to click the &lt;code&gt;BETA&lt;/code&gt; button next to the logo at the top of each
+page to create a new issue on GitHub.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 19 Jan 2015 00:00:00 +0000</pubDate>
+        <link>http://rosindex.github.io/2015/01/19/announce.html</link>
+        <guid isPermaLink="true">http://rosindex.github.io/2015/01/19/announce.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
