@@ -1,39 +1,31 @@
-# By default use production (ros2/rosindex:gh-pages) as the cache so a build
-# always starts from a known good state.
-cache_url=`git remote get-url origin`
-cache_branch=gh-pages
+config_file=_config.yml
+devel_config_file=_config_devel.yml
 
-staging_url=git@github.com:sloretz/rosindex-staging.git
-staging_branch=gh-pages
+workdir=..
+deploy_dir=$(workdir)/deploy
+checkout_dir=$(workdir)/checkout
 
 # This target is invoked by a doc_independent job on the ROS buildfarm.
-html: download-cache build deploy-staging
+html: build deploy
 
 # Clone a bunch of other repos part of the rosdistro and build the index.
 build:
-	bundle exec jekyll build --verbose --trace --config=_config.yml
+	mkdir -p $(deploy_dir)/cache
+	bundle exec jekyll build --verbose --trace --config=$(config_file)
 
-# Push to a staging github repo for use with github pages.
-# A pull request to production must be manually created.
-deploy-staging:
-	git clone $(staging_url) --branch $(staging_branch) _deploy
-	# Copy new files from last build
-	cp -R _build _deploy
-	# copy modified cache files to staging
-	cp --no-clobber --verbose _caches/* _deploy
-	cd _deploy && git status
-	cd _deploy && git commit -m "make deploy-staging by `whoami` on `date`"
-	cd _deploy && git push
+# deploy assumes download-previous and build were run already
+deploy:
+	cd $(deploy_dir) && git add --all
+	cd $(deploy_dir) && git status
+	cd $(deploy_dir) && git commit -m "make deploy by `whoami` on `date`"
+	cd $(deploy_dir) && git push --verbose
 
-download-cache:
-	mkdir -p _checkout
-	git submodule update --init --recursive --force
-	# Shallow clone cache repo since it won't be pushed to from this script
-	git clone $(cache_url) --depth 1 --branch $(cache_branch) _caches
+serve:
+	bundle exec jekyll serve --host 0.0.0.0 --trace -d $(deploy_dir) --config=$(config_file) --skip-initial-build
+
+serve-devel:
+	bundle exec jekyll serve --host 0.0.0.0 --no-watch -d $(deploy_dir) --trace --config=$(config_file),$(devel_config_file) --skip-initial-build
 
 clean:
-	rm -rf _caches
-	rm -rf _deploy
-	rm -rf _build
-	rm -rf _rosdistro/*
-	rm -rf _checkout
+	rm -rf $(deploy_dir)
+	rm -rf $(checkout_dir)
